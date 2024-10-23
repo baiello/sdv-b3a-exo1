@@ -46,6 +46,7 @@ section {
 }
 
 .time {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -64,13 +65,19 @@ section {
     }
 
     label {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 50px;
+        z-index: 10;
+    }
+
+    label + div {
         display: flex;
         justify-content: space-between;
         background-color: #FFFFFF;
         border-radius: 15px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, .15);
-
-
         overflow: hidden;
         cursor: pointer;
 
@@ -108,13 +115,13 @@ section {
         }
     }
 
-    input + label .price {
+    input + label + div .price {
         margin-right: -59px;
         transition: margin-right .5s;
     }
 
-    input + label:hover .price,
-    input:checked + label .price {
+    input + label:hover + div .price,
+    input:checked + label + div .price {
         margin-right: 0;
     }
 
