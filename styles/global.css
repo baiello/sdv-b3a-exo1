@@ -1,0 +1,103 @@
+html,
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+svg {
+    width: 22px;
+    height: 22px;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.button {
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 13px 19px;
+    border-radius: 25px;
+    background: rgb(147,86,220);
+    background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+}
+
+.button:hover {
+    background: linear-gradient(0deg, rgba(147,86,220,.85) 0%, rgba(255,121,218,.85) 100%);
+}
+
+.favorite {
+    position: relative;
+    width: 22px;
+    height: 22px;
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    svg {
+        position: absolute;
+    }
+
+    input[type="checkbox"] + label path.favorite-unchecked {
+        display: block;
+    }
+
+    input[type="checkbox"] + label path.favorite-checked {
+        display: none;
+        fill: rgba(147,86,220,1);
+    }
+
+    input[type="checkbox"]:checked {
+        & + label path.favorite-unchecked {
+            display: none;
+        }
+
+        & + label path.favorite-checked {
+            display: block;
+        }
+    }
+}
+
+header {
+
+    div:nth-child(1) {
+        position: relative;
+        padding: 10px 0;
+        background-color: #FFFFFF;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
+        z-index: 999;
+
+        a {
+            font-family: var(--font-title);
+            font-weight: 400;
+            font-size: 30px;
+            color: black;
+        }
+    }
+
+    div:nth-child(2) {
+        position: relative;
+        color: #353535;
+        padding: 15px 0;
+        text-align: center;
+        background-color: #EAEAEA;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+        z-index: 900;
+
+        input[type="text"] {
+            width: 60px;
+            background-color: transparent;
+            border: 0;
+        }
+    }
+
+}

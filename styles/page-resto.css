@@ -1,0 +1,125 @@
+h1 {
+    font-family: var(--font-title);
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+img {
+    max-height: 383px;
+}
+
+section {
+    background-color: #FFFFFF;
+}
+
+.container {
+    position: relative;
+    margin-top: -40px;
+    border-radius: var(--container-resto-vertical-padding) var(--container-resto-vertical-padding) 0 0;
+    padding: var(--container-resto-vertical-padding) 20px;
+    background-color: var(--color-background);
+
+    @media screen and (min-width: 768px) {
+        padding-left: 105px;
+        padding-right: 105px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        padding-left: 210px;
+        padding-right: 210px;
+    }
+}
+
+.resto-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 42px;
+    @media screen and (min-width: 1024px) {
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h2::after {
+        content: '';
+        display: block;
+        margin: 5px 0 10px 0;
+        width: 40px;
+        height: 4px;
+        background-color: var(--color-green-light);
+    }
+
+    input {
+        display: none;
+    }
+
+    label {
+        display: flex;
+        justify-content: space-between;
+        background-color: #FFFFFF;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, .15);
+
+
+        overflow: hidden;
+        cursor: pointer;
+
+        .title {
+            padding: 10px;
+            overflow: hidden;
+            font-size: 12px;
+            div {
+                margin-top: 5px 0;
+            }
+            div, h3 {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .price {
+            display: flex;
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-left: 10px;
+            }
+            div::after {
+                content: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"%3E%3Cpath fill="white" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/%3E%3C/svg%3E');
+                display: block;
+                width: 16px;
+                height: 22px;
+                padding: 14px 21.5px;
+                margin-left: 10px;
+                background-color: var(--color-green-light);
+            }
+        }
+    }
+
+    input + label .price {
+        margin-right: -59px;
+        transition: margin-right .5s;
+    }
+
+    input + label:hover .price,
+    input:checked + label .price {
+        margin-right: 0;
+    }
+
+}
+
+.time:not(:last-child) {
+    margin-bottom: 40px;
+}

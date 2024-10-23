@@ -1,0 +1,113 @@
+.container {
+    padding: 0 20px;
+}
+
+section {
+    padding: 50px 0 66px 0;
+}
+
+main {
+    section:nth-child(1) {
+        text-align: center;
+    }
+
+    section:nth-child(2) {
+        background-color: #FFFFFF;
+
+        ol {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            list-style: none;
+            padding: 0 0 0 15px;
+            counter-reset: fct;
+
+            @media screen and (min-width: 1024px) {
+                flex-direction: row;
+            }
+
+            li {
+                position: relative;
+                padding: 20px 25px;
+                background-color: var(--color-background);
+                border-radius: 20px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+                @media screen and (min-width: 1024px) {
+                    width: 335px;
+                }
+
+                i {
+                    margin-right: 10px;
+                }
+            }
+
+            li::before {
+                content: counter(fct);
+                counter-increment: fct;
+                position: absolute;
+                left: -15px;
+                top: 15px;
+                color: #FFFFFF;
+                background-color: #9356DC;
+                padding: 5px 10px;
+                border-radius: 100%;
+            }
+
+        }
+    }
+}
+
+div.restaurants {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+
+    @media screen and (min-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+article.restaurant-card {
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 10;
+
+    a {
+        color: #000000;
+    }
+
+    h1 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    img {
+        height: 175px;
+    }
+
+    .new {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        border-radius: 2px;
+        padding: 5px 10px;
+        color: var(--color-green-dark);
+        background-color: var(--color-green-light);
+        font-size: 14px;
+    }
+
+    .restaurant-info {
+        padding: 16px 13px;
+    }
+
+    .favorite {
+        position: absolute;
+        top: 191px;
+        right: 25px;
+    }
+
+}

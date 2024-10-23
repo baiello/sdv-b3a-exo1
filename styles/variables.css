@@ -1,0 +1,11 @@
+:root {
+    --color-background: #F6F6F6;
+    --color-green-light: #99E2D0;
+    --color-green-dark: #008766;
+
+    --font-title: 'Shrikhand', Arial, Helvetica, sans-serif;
+    --font-body: 'Roboto', Arial, Helvetica, sans-serif;
+
+    --container-width: 1024px;
+    --container-resto-vertical-padding: 40px;
+}
