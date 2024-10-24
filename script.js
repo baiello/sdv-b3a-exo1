@@ -7,23 +7,18 @@ function closeBookingModal() {
 }
 
 
-const bookingModalElement = document.getElementById('booking-modal');
-
 document.getElementById('booking-button').addEventListener('click', () => {
     openBookingModal();
 });
 
-document.getElementById('close-booking-modal').addEventListener('click', () => {
-    closeBookingModal();
-})
+const bookingModalElement = document.getElementById('booking-modal');
+const bookingModalContent = document.getElementById('booking-modal-content');
 
-// bookingModalElement.addEventListener('click', () => {
-//     closeBookingModal();
-// });
-
-
-
-
+bookingModalElement.addEventListener('click', (event) => {
+    if (event.target === bookingModalElement) {
+        closeBookingModal();
+    }
+});
 
 document.getElementById('booking-submit').addEventListener('click', (event) => {
     event.preventDefault();
