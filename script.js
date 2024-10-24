@@ -74,7 +74,6 @@ bodyElement.append(modalElement);
 
 
 
-
 function openBookingModal() {
     bookingModalElement.style.display = 'grid';
 }
@@ -82,7 +81,6 @@ function openBookingModal() {
 function closeBookingModal() {
     bookingModalElement.style.display = 'none';
 }
-
 
 document.getElementById('booking-button').addEventListener('click', () => {
     openBookingModal();
@@ -133,4 +131,40 @@ document.getElementById('booking-submit').addEventListener('click', (event) => {
         document.getElementById('guests-error').innerText = "Vous devez être entre 1 et 10 personnes."
     }
 
+});
+
+
+
+
+
+
+
+const myEvent = new Event('userFetched');
+
+
+let user = {};
+
+function fetchUserA(id) {
+    fetch('https://jsonplaceholder.typicode.com/users/1')
+        .then(response => {
+            return response.json();
+        })
+        .then(userData => {
+            user = userData;
+            document.dispatchEvent(myEvent);
+        });
+}
+
+async function fetchUserB(id) {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+    const userData = await response.json();
+    user = userData;
+    document.dispatchEvent(myEvent);
+}
+
+fetchUserA(1);
+fetchUserB(2);
+
+document.addEventListener('userFetched', () =>  {
+    console.log(user);
 });
