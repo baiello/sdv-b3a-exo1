@@ -12,9 +12,68 @@
         <link rel="stylesheet" type="text/css" href="/styles/reset.css">
         <link rel="stylesheet" type="text/css" href="/styles/global.css">
         <link rel="stylesheet" type="text/css" href="/styles/page-resto.css">
+        <link rel="stylesheet" type="text/css" href="/styles/modal.css">
         <script src="https://kit.fontawesome.com/0934fdeb4e.js" crossorigin="anonymous"></script>
+        <script src="script.js" defer></script>
     </head>
     <body>
+
+        <div class="modal" id="booking-modal">
+            <div class="modal-container">
+                <form id="booking-form" method="get" action="/resto1.html" novalidate>
+                    <div>
+                        <div>
+                            <label for="firstname">Prénom :</label>
+                        </div>
+                        <div>
+                            <input type="text" id="firstname" name="firstname">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="email">Email :</label>
+                        </div>
+                        <div>
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="phone">Téléphone :</label>
+                        </div>
+                        <div>
+                            <input type="tel" id="phone" name="phone" placeholder="+33677889900">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="date">Date :</label>
+                        </div>
+                        <div>
+                            <input type="date" id="date" name="date">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="guests">Nombre de convives :</label>
+                        </div>
+                        <div>
+                            <input type="number" id="guests" name="guests">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <input id="booking-submit" class="button" type="submit" value="Réserver">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <button id="close-booking-modal">Fermer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <header>
             <div>
@@ -37,6 +96,10 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path class="favorite-checked" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
                             </label>
                         </div>
+                    </div>
+
+                    <div class="resto-booking">
+                        <button class="button" id="booking-button">Réserver une table</button>
                     </div>
 
                     <form method="get" action="#">

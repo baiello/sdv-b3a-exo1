@@ -45,6 +45,11 @@ section {
     }
 }
 
+.resto-booking {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
 .time {
     position: relative;
     display: flex;
