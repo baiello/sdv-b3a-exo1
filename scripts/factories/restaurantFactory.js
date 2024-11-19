@@ -98,7 +98,7 @@ function renderMenu() {
 
             </div>
         </section>
-        `;
+    `;
 
     return mainElement;
 }
