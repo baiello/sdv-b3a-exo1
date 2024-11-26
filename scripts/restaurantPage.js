@@ -1,3 +1,9 @@
+import '../styles/variables.css';
+import '../styles/reset.css';
+import '../styles/global.css';
+import '../styles/page-resto.css';
+import '../styles/modal.css';
+
 import { createRestaurant } from "./factories/restaurantFactory.js";
 import { renderModal, openBookingModal, closeBookingModal } from "./bookingModal.js"
 
