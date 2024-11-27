@@ -3,7 +3,7 @@ function renderCard() {
     article.setAttribute('class', 'restaurant-card');
 
     article.innerHTML = `
-        <a href="/restaurant.html?id=${this.id}">
+        <a href="/sdv-b3a-exo1/restaurant.html?id=${this.id}">
             <div>
                 <img src="${this.pictureUrl}" alt="Photo du restaurant ${this.name}">
             </div>
