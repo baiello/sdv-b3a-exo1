@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
+    base: '/sdv-b3a-exo1/',
     build: {
         rollupOptions: {
             input: {
