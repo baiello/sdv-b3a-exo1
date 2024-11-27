@@ -1,0 +1,20 @@
+name: Test and Deploy Vite App on Github Pages
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  test-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: NODE_ENV=development npm install
+      - name: Launch tests
+        run: NODE_ENV=development npm run test
